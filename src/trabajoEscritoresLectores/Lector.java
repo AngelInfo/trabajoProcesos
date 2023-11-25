@@ -14,17 +14,16 @@ public class Lector implements Runnable {
         this.id = contadorL.incrementAndGet();
         this.controlador = controlador;
     }
-
     public void run() {
-
-        try {
-            controlador.empezarLeer();
-            System.out.println("Lector: " + id + " esta escribiendo, hay " + controlador.numLectores + " escribiendo");
-            Thread.sleep(ThreadLocalRandom.current().nextInt(3000));
-            controlador.terminarLeer();
-            System.out.println("Lector: " + id + " ha dejado de escribir, ahora hay " + controlador.numLectores + " escribiendo");
-        } catch (InterruptedException e) {
-            throw new RuntimeException();
+        while (true) {
+            try {
+                controlador.empezarLeer(id);
+                Thread.sleep(200);
+                controlador.terminarLeer(id);
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                throw new RuntimeException();
+            }
         }
     }
 
