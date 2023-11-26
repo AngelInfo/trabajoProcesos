@@ -8,10 +8,10 @@ public class Lector2 implements Runnable {
     public static AtomicInteger contadorL = new AtomicInteger(0);
     private int id;
     //controlador, objeto que usamos para acceder a los metodos.
-    private RW_Monitor_4 controlador;
+    private Monitor controlador;
 
-    //Constructor al que se le pasa un objeto Controlador y cada vez que se llama va incrementando él id de Lector.
-    public Lector2(RW_Monitor_4 controlador) {
+    //Constructor al que se le pasa un objeto Monitor y cada vez que se llama va incrementando él id de Lector.
+    public Lector2(Monitor controlador) {
         this.id = contadorL.incrementAndGet();
         this.controlador = controlador;
     }
@@ -20,9 +20,9 @@ public class Lector2 implements Runnable {
     public void run() {
 
             try {
-                controlador.openReading(id);
+                controlador.empezarLeer(id);
                 Thread.sleep(ThreadLocalRandom.current().nextInt(200));
-                controlador.closeReading(id);
+                controlador.terminarLeer(id);
                 Thread.sleep(ThreadLocalRandom.current().nextInt(200));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);

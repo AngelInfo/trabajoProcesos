@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Main2 {
     public static void main(String[] args) {
-        RW_Monitor_4 c = new RW_Monitor_4();
+        Monitor c = new Monitor();
         //lista de lectores
         List<Lector2> lectores = new ArrayList<>();
         //lista de escritores

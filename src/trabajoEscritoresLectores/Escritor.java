@@ -1,7 +1,5 @@
 package trabajoEscritoresLectores;
 
-import trabajoEscritoresLectores2.RW_Monitor_4;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Escritor implements Runnable {
