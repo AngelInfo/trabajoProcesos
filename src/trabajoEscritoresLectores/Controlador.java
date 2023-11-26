@@ -43,7 +43,7 @@ public class Controlador {
         hayEscritor = true;
         // Incrementa el número de escritores activos
         numEscritores++;
-        // Actualiza el contenido del "libro"
+        // Actualiza el contenido del "libro".
         libro = libro.concat(String.valueOf(id));
         System.out.println("Escritor: " + id + " esta escribiendo, hay " + numEscritores + " escribiendo" + " libro:" + libro);
     }
